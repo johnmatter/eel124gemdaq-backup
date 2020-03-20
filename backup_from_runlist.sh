@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-runlist=/home/jmatter/eel124gemdaq-backup/runlist_test
+runlist=$1
 data_dir=/data/raw
 mss_dir=/mss/halla/sbs/GEM/cosmics/
 cache_dir=/cache/halla/sbs/GEM/cosmics/
