@@ -7,7 +7,7 @@
 # Useful for doing something like:
 #   find /data/raw -regex "/data/raw/gem_cleanroom_352.evio.." -exec ./backup_file.sh {} \;
 
-runlist=/home/jmatter/manual_backup/runlist_test
+runlist=/home/jmatter/eel124gemdaq-backup/runlist_test
 data_dir=/data/raw
 mss_dir=/mss/halla/sbs/GEM/cosmics/
 cache_dir=/cache/halla/sbs/GEM/cosmics/
