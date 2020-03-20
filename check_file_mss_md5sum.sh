@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# "file" should be the basename, not the full path
 
 file=$1
 mss_dir=/mss/halla/sbs/GEM/cosmics
