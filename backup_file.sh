@@ -55,6 +55,7 @@ source_md5=$(md5sum $file | awk '{print $1}')
 # Remove from /cache if hashes match
 if [[ "$mss_md5" == "$source_md5" ]]; then
     echo hashes match
+    rm $cache_file
 else
     echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
     echo "!! hashes don't match! Please investigate !!"

@@ -51,6 +51,7 @@ for run in $(cat $runlist); do
         # Remove from /cache if hashes match
         if [[ "$mss_md5" == "$source_md5" ]]; then
             echo hashes match
+            rm $cache_file
         else
             echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
             echo "!! hashes don't match! Please investigate !!"
