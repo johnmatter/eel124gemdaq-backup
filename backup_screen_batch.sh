@@ -2,6 +2,10 @@
 # This script will create a screen session that will run
 # the backup_from_fileslist.sh for all files named list(.*).txt.
 # Each list gets its own window in the screen session.
+# WARNING: Be mindful of how many sessions you have running! I'm 
+# still not quite sure how resource intensive these processes are,
+# and if you are taking/decoding/analyzing data simultaneosuly,
+# you could crash the computer.
 
 the_date=$( date +%y%m%d%H%M )
 session_name=backupsession$the_date
