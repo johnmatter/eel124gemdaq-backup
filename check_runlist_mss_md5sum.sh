@@ -30,6 +30,16 @@ for run in $(cat $runlist); do
         echo $mss_md5 $mss_file
         echo $source_md5 $source_file
 
+        if [[ "$mss_md5" == "$source_md5" ]]; then
+            echo hashes match
+            # rm $cache_file
+        else
+            echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+            echo "!! hashes don't match! Please investigate !!"
+            echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        fi
+
+
     done
     echo
     echo
