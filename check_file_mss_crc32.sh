@@ -11,17 +11,17 @@ cache_file=$cache_dir/$file
 source_file=$source_dir/$file
 
 # Get backed-up version's hash
-mss_md5=$(cat $mss_file | grep md5 | sed "s/md5=//")
+mss_crc32=$(cat $mss_file | grep crc32 | sed "s/crc32=//")
 
 # Get source hash
-source_md5=$(md5sum $source_file | awk '{print $1}')
+source_crc32=$(crc32 $source_file | sed "s/^0*//")
 
-echo
-echo $mss_md5 $mss_file
-echo $source_md5 $source_file
+echoawk '{print $1}'
+echo $mss_crc32 $mss_file
+echo $source_crc32 $source_file
 echo
 
-if [[ "$mss_md5" == "$source_md5" ]]; then
+if [[ "$mss_crc32" == "$source_crc32" ]]; then
 	echo hashes match
 
 	echo "Do you want to delete $cache_file?"

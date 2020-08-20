@@ -41,15 +41,15 @@ for run in $(cat $runlist); do
         echo
 
         # -----------------------------
-        # Check md5 hash
+        # Check crc32 hash
         # Get backed-up version's hash
-        mss_md5=$(cat $mss_file | grep md5 | sed "s/md5=//")
+        mss_crc32=$(cat $mss_file | grep crc32 | sed "s/crc32=//")
 
         # Get source hash
-        source_md5=$(md5sum $file | awk '{print $1}')
+        source_crc32=$(crc32 $file | sed "s/^0*//")
 
         # Remove from /cache if hashes match
-        if [[ "$mss_md5" == "$source_md5" ]]; then
+        if [[ "$mss_crc32" == "$source_crc32" ]]; then
             echo hashes match
             rm $cache_file
         else
